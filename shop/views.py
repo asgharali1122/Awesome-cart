@@ -41,7 +41,7 @@ def contact(request):
         desc = request.POST.get('desc', '')
         contact = Contact(name=name, email=email, phone=phone, desc=desc)
         contact.save()
-    return render(request, 'shop/contact.html' , {'thank':thank})
+    return render(request, 'shop/contact.html')
 
 def tracker(request):
     return render(request, 'shop/tracker.html')
