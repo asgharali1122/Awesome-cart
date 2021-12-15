@@ -28,7 +28,7 @@ def index(request):
     # allProds = [[products, range(1, nSlides), nSlides],
     #             [products, range(1, nSlides), nSlides]]
     params = {'allProds':allProds}
-    return render(request, 'index.html', params)
+    return render(request, 'index1.html', params)
 
 def about(request):
     return render(request, 'about.html')
