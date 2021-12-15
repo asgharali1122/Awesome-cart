@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 from django.http import HttpResponse
 
-def index(request):
+def index1(request):
     # products = Product.objects.all()
     # print(products)
     # n = len(products)
