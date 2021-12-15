@@ -28,10 +28,10 @@ def index(request):
     # allProds = [[products, range(1, nSlides), nSlides],
     #             [products, range(1, nSlides), nSlides]]
     params = {'allProds':allProds}
-    return render(request, 'shop/index.html', params)
+    return render(request, 'index.html', params)
 
 def about(request):
-    return render(request, 'shop/about.html')
+    return render(request, 'about.html')
 
 def contact(request):
     if request.method=="POST":
@@ -41,20 +41,20 @@ def contact(request):
         desc = request.POST.get('desc', '')
         contact = Contact(name=name, email=email, phone=phone, desc=desc)
         contact.save()
-    return render(request, 'shop/contact.html')
+    return render(request, 'contact.html')
 
 def tracker(request):
-    return render(request, 'shop/tracker.html')
+    return render(request, 'tracker.html')
 
 def search(request):
-    return render(request, 'shop/search.html')
+    return render(request, 'search.html')
 
 def productView(request, myid):
     # Fetch the product using the id
     product = Product.objects.filter(id=myid)
 
 
-    return render(request, 'shop/views.html', {'product':product[0]})
+    return render(request, 'views.html', {'product':product[0]})
 
 def checkout(request):
     if request.method=="POST":
@@ -71,5 +71,5 @@ def checkout(request):
         order.save()
         thank = True
         id = order.order_id
-        return render(request, 'shop/checkout.html', {'thank':thank, 'id': id})
-    return render(request, 'shop/checkout.html')
+        return render(request, 'checkout.html', {'thank':thank, 'id': id})
+    return render(request, 'checkout.html')
